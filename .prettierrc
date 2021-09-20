@@ -1,0 +1,18 @@
+{
+	"useTabs": true,
+	"singleQuote": true,
+	"trailingComma": "all",
+  "overrides": [
+    {
+      "files": "*.svelte",
+      "options": { "parser": "svelte" },
+    }
+  ],
+	"printWidth": 100,
+  "plugins": ["./node_modules/prettier-plugin-svelte"],
+	"svelteStrictMode": true,
+	"svelteSortOrder": "options-scripts-markup-styles",
+	"svelteAllowShorthand": true,
+	"svelteBracketNewLine": true,
+	"svelteIndentScriptAndStyle": true
+}

@@ -1,0 +1,8 @@
+[*]
+indent_size = 2
+
+[*.{js,ts,svelte,graphql,cjs,html}]
+indent_style = tab
+
+[*.md]
+trim_trailing_whitespace = false
