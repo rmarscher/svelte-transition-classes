@@ -30,7 +30,7 @@ npm i svelte-transition-classes
 
 ## Usage
 
-```
+```svelte
 <script>
   import classes from 'svelte-transition-classes';
 </script>
