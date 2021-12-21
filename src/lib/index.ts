@@ -24,11 +24,8 @@ export function classes(
 	const baseClasses = base ? base.split(' ') : [];
 	const fromClasses = from ? from.split(' ') : [];
 	const toClasses = to ? to.split(' ') : [];
-	if (baseClasses.length > 0) {
-		node.classList.add(...baseClasses);
-	}
-	if (fromClasses.length > 0) {
-		node.classList.add(...fromClasses);
+	if (baseClasses.length > 0 || fromClasses.length > 0) {
+		node.classList.add(...[...baseClasses, ...fromClasses]);
 	}
 	let updated = false;
 	let completed = false;
