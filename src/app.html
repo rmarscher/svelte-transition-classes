@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon.png" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<title>svelte-transition-classes</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%svelte.head%
+		%sveltekit.head%
 	</head>
-	<body>
+	<body data-sveltekit-preload-data="hover">
 		<a
 			href="https://github.com/rmarscher/svelte-transition-classes"
 			class="github-corner"
@@ -58,6 +59,6 @@
 				}
 			}
 		</style>
-		<div id="svelte">%svelte.body%</div>
+		<div>%sveltekit.body%</div>
 	</body>
 </html>

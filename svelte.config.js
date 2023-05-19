@@ -15,7 +15,6 @@ const config = {
 		paths: {
 			base: process.env.BASE_PATH ? process.env.BASE_PATH : undefined,
 		},
-		target: '#svelte',
 	},
 };
 

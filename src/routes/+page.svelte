@@ -1,12 +1,11 @@
-<script lang="ts">
+<script>
 	import classes from '$lib';
-
 
 	const styles = {
 		header: 'text-2xl font-bold',
 		codeBlock: 'text-xs sm:text-sm overflow-x-auto py-2',
-		codeInline: 'bg-gray-200 px-1',
-	}
+		codeInline: 'bg-gray-200 px-1'
+	};
 
 	let show = false;
 
@@ -24,13 +23,16 @@
 			<a
 				class="underline font-medium"
 				href="https://github.com/rmarscher/svelte-transition-classes"
-				rel="external">svelte-transition-classes</a> is a custom
-				<a href="https://svelte.dev/docs#transition_fn" class="underline" rel="external">Svelte transition</a>
-				that adds a set of base CSS classes to the
-				DOM node, applies another set of classes for the start of the transition and
-				then at the first tick of the transition, swaps the starting classes with
-				another set of destination classes. CSS transitions and animations can be triggered
-				from the class updates.
+				rel="external">svelte-transition-classes</a
+			>
+			is a custom
+			<a href="https://svelte.dev/docs#transition_fn" class="underline" rel="external"
+				>Svelte transition</a
+			>
+			that adds a set of base CSS classes to the DOM node, applies another set of classes for the start
+			of the transition and then at the first tick of the transition, swaps the starting classes with
+			another set of destination classes. CSS transitions and animations can be triggered from the class
+			updates.
 		</div>
 		<div>
 			This Svelte transition was created to easily implement the transitions used in
@@ -42,7 +44,7 @@
 			has the following comment with recommended classes to apply:
 		</div>
 		<div>
-			<pre class="{styles.codeBlock}">{`<!--
+			<pre class={styles.codeBlock}>{`<!--
   Dropdown menu, show/hide based on menu state.
 
   Entering: "transition ease-out duration-100"
@@ -58,12 +60,13 @@
 		<div class="relative inline-block text-left">
 			<div>
 				<button
-					on:click|preventDefault="{toggle}"
+					on:click|preventDefault={toggle}
 					type="button"
 					class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
 					id="menu-button"
 					aria-expanded={show}
 					aria-haspopup="true"
+					data-testid="menu-button"
 				>
 					Toggle
 					<!-- Heroicon name: solid/chevron-down -->
@@ -77,7 +80,8 @@
 						<path
 							fill-rule="evenodd"
 							d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-							clip-rule="evenodd"></path>
+							clip-rule="evenodd"
+						/>
 					</svg>
 				</button>
 			</div>
@@ -93,18 +97,18 @@
 						To: "transform opacity-0 scale-95"
 				-->
 				<div
-					in:classes="{{
+					in:classes={{
 						duration: 100,
 						base: 'transition ease-out duration-100',
 						from: 'transform opacity-0 scale-95',
-						to: 'transform opacity-100 scale-100',
-					}}"
-					out:classes="{{
+						to: 'transform opacity-100 scale-100'
+					}}
+					out:classes={{
 						duration: 75,
 						base: 'transition ease-in duration-75',
 						from: 'transform opacity-100 scale-100',
-						to: 'transform opacity-0 scale-95',
-					}}"
+						to: 'transform opacity-0 scale-95'
+					}}
 					class="origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
 					role="menu"
 					aria-orientation="vertical"
@@ -140,12 +144,13 @@
 		</div>
 
 		<div class="pt-6">
-			Obviously there is more to do to implement a dropdown component with keyboard navigation, click handlers,
-			aria attributes and other UX considerations, but the transition has been implemented exactly as suggested by
-			Tailwind UI.
+			Obviously there is more to do to implement a dropdown component with keyboard navigation,
+			click handlers, aria attributes and other UX considerations, but the transition has been
+			implemented exactly as suggested by Tailwind UI.
 		</div>
 		<div>
-			The <span class={styles.codeInline}>base</span>, <span class={styles.codeInline}>from</span>
+			The <span class={styles.codeInline}>base</span>,
+			<span class={styles.codeInline}>from</span>
 			and <span class={styles.codeInline}>to</span> params are strings containing the class names
 			and are all optional. The <span class={styles.codeInline}>duration</span> is required to give
 			time for the css transitions and animations to complete. The Svelte transition
@@ -154,7 +159,7 @@
 
 		<div class="pt-6">
 			<!-- Had trouble with prettier and this code example, so encoded the script part -->
-			<pre class="{styles.codeBlock}">{@html `&lt;script lang=&quot;ts&quot;&gt;
+			<pre class={styles.codeBlock}>{@html `&lt;script lang=&quot;ts&quot;&gt;
 &#9;import classes from &apos;lively-transition-classes&apos;;
 &#9;let show = false;
 &lt;/script&gt;`}{`
